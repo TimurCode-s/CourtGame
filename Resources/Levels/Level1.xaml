@@ -9,6 +9,6 @@
         <Image Source="judge.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="148" TranslationY="9"></Image>
         <Image Source="suspect.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="300" TranslationY="9" />
 
-        
+
     </Grid>
 </ContentPage>
