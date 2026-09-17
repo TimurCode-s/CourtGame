@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourtGame.Resources.Views.LevelPage"
+             Title="LevelPage">
+    <Grid RowDefinitions="*,*,*">
+
+        <HorizontalStackLayout Grid.Row="0">
+            <Button Clicked="Leve1" Text="1"></Button>
+        </HorizontalStackLayout>
+        <VerticalStackLayout Grid.Row="1">
+            <Button Clicked="GoBack_Button" Text="Back" ></Button>
+            
+
+        </VerticalStackLayout>
+
+
+
+    </Grid>
+    
+    
+</ContentPage>
