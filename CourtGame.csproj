@@ -57,6 +57,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Resources\Models\**" />
+	  <Compile Remove="Resources\Models\**" />
+	  <EmbeddedResource Remove="Resources\Models\**" />
+	  <MauiCss Remove="Resources\Models\**" />
+	  <MauiXaml Remove="Resources\Models\**" />
+	  <None Remove="Resources\Models\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
@@ -75,10 +84,6 @@
 	  <MauiXaml Update="Resources\Views\OptionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Resources\Models\" />
 	</ItemGroup>
 
 </Project>
