@@ -6,16 +6,26 @@
     <Grid>
         <Image Source="court_room.png" Aspect="AspectFill" ></Image>
 
-        <FlexLayout Wrap="Wrap">
-            <Image Source="judge.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="148" TranslationY="9"></Image>
-            <Image Source="suspect.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="300" TranslationY="9" />
+        <AbsoluteLayout>
+       
+            <Image Source="lawyer.png"
+               Aspect="AspectFit"
+               AbsoluteLayout.LayoutBounds="0.15,0.46,0.12,0.2"
+               AbsoluteLayout.LayoutFlags="All" />
+
+            <Image Source="suspect.png"
+               Aspect="AspectFit"
+               AbsoluteLayout.LayoutBounds="0.33,0.46,0.12,0.2"
+               AbsoluteLayout.LayoutFlags="All" />
+            
+            <Image Source="prosecutor.png"
+               Aspect="AspectFit"
+               AbsoluteLayout.LayoutBounds="0.68,0.46,0.12,0.2"
+               AbsoluteLayout.LayoutFlags="All" />
+
+        </AbsoluteLayout>
 
 
-
-
-        </FlexLayout>
-
-        
 
 
     </Grid>
