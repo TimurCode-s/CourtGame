@@ -3,7 +3,7 @@
     x:Class="CourtGame.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:CourtGame.Resources.Views"
+    xmlns:local="clr-namespace:CourtGame.Views"
     Shell.FlyoutBehavior="Locked"
     Title="CourtGame">
 
@@ -18,7 +18,9 @@
 
     <ShellContent
         Title="Levels"
-        ContentTemplate="{DataTemplate local:LevelPage}" />
+        ContentTemplate="{DataTemplate local:Lo}" />
+
     
+
 
 </Shell>

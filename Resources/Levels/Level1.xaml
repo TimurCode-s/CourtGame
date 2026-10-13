@@ -4,10 +4,18 @@
              x:Class="CourtGame.Resources.Levels.Level1"
              Title="Level1">
     <Grid>
-
         <Image Source="court_room.png" Aspect="AspectFill" ></Image>
-        <Image Source="judge.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="148" TranslationY="9"></Image>
-        <Image Source="suspect.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="300" TranslationY="9" />
+
+        <FlexLayout Wrap="Wrap">
+            <Image Source="judge.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="148" TranslationY="9"></Image>
+            <Image Source="suspect.png" HeightRequest="100" HorizontalOptions="Start" TranslationX="300" TranslationY="9" />
+
+
+
+
+        </FlexLayout>
+
+        
 
 
     </Grid>
