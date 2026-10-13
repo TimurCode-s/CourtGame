@@ -1,4 +1,4 @@
-﻿using CourtGame.Resources.Views;
+﻿using CourtGame.Views;
 using CourtGame.Resources.Levels;
 namespace CourtGame
 {

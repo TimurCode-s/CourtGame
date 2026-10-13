@@ -17,8 +17,12 @@
         ContentTemplate="{DataTemplate local:OptionPage}" />
 
     <ShellContent
-        Title="Levels"
-        ContentTemplate="{DataTemplate local:Lo}" />
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}" />
+    
+    <ShellContent
+        Title="Register"
+        ContentTemplate="{DataTemplate local:RegisterPage}" />
 
     
 

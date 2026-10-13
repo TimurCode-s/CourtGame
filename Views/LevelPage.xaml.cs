@@ -1,6 +1,6 @@
 using CourtGame.Resources.Levels;
 
-namespace CourtGame.Resources.Views;
+namespace CourtGame.Views;
 
 public partial class LevelPage : ContentPage
 {

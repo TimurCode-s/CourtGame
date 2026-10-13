@@ -5,7 +5,8 @@
              Title="RegisterPage">
     <VerticalStackLayout>
         <Label Text="UserNameee"></Label>
-        <Entry x:Name="UserNameEntry" Placeholder="Enter your username" />
+        <Entry x:Name="Name" Placeholder="Enter your username" />
+        <Label x:Name="isVallidName" Text=""></Label>
         <Label Text="Passworde"></Label>
         <Entry x:Name="Password" Placeholder="Enter your password" />
         <Button Text="Register" Clicked="OnRegisterClicked" />

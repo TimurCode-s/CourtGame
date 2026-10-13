@@ -1,5 +1,5 @@
 
-namespace CourtGame.Resources.Views;
+namespace CourtGame.Views;
 public partial class HomePage : ContentPage
 {
 	public HomePage()
