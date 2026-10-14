@@ -4,6 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <Style TargetType="Label" x:Key="ButtSize">
+        <Setter Property="TextColor" Value="BlueViolet" ></Setter>
+        <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style TargetType="VerticalStackLayout" x:Key="EldanVert">
+        <Setter Property="HorizontalOptions" Value="Center"></Setter>
+        <Setter Property="VerticalOptions" Value="Center"></Setter>
+        <Setter Property="WidthRequest" Value="350"></Setter>
+        <Setter Property="Spacing" Value="4"> </Setter>
+    </Style>
+    
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
     </Style>

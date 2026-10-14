@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourtGame.Views.RegisterPage"
              Title="RegisterPage">
-    <VerticalStackLayout>
-        <Label Text="UserNameee"></Label>
+    <VerticalStackLayout Style="{x:StaticResource EldanVert}" >
+        <Label Style="{x:StaticResource ButtSize}" Text="UserNameee"></Label>
         <Entry x:Name="Name" Placeholder="Enter your username" />
         <Label x:Name="isVallidName" Text=""></Label>
-        <Label Text="Passworde"></Label>
+        <Label Text="Passworde" ></Label>
         <Entry x:Name="Password" Placeholder="Enter your password" />
         <Button Text="Register" Clicked="OnRegisterClicked" />
     </VerticalStackLayout>
