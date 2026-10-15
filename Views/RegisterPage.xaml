@@ -41,6 +41,7 @@
                             FontSize="24"
                             FontAttributes="Bold"
                             HorizontalTextAlignment="Center"
+                            FontFamily="QuicksandRegular"
                             TextColor="#FFF3E7" />
 
                         <Label
