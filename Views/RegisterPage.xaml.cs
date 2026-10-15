@@ -12,20 +12,41 @@ public partial class RegisterPage : ContentPage
 
 	public void OnRegisterClicked(object sender, EventArgs e)
 	{
-		DataRepository data = new DataRepository();
-		if(data.AddUser(Name.Text, Password.Text))
-		{
-            DataRepository.users.Add(new User { Name = Name.Text, Password = Password.Text });
-			DisplayAlert("Success", "User registered successfully!", "OK");
-			
+		bool isValid = true;
+        DataRepository data = new DataRepository();
+
+        if (Password.Text == "" || Password.Text == null)
+        {
+            PassErr.IsVisible = true;
+            isValid = false;
+        }
+        if(Name.Text == "" || Name.Text == null)
+        {
+            NameErr.IsVisible = true;
+            isValid = false;
 
         }
-		else
+        if (isValid)
 		{
-            DisplayAlert("Failed", "User with user name like yours already exist", "OK");
-        }
-            
-        
-		
+            if (data.AddUser(Name.Text, Password.Text))
+            {
+                DataRepository.users.Add(new User { Name = Name.Text, Password = Password.Text });
+                DisplayAlert("Success", "User registered successfully!", "OK");
+
+
+            }
+            else
+            {
+                DisplayAlert("Failed", "User with user name like yours already exist", "OK");
+            }
+        } 	
+    }
+    public async void OnLoginClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new LoginPage());
+    }
+    public void OnTogglePasswordClicked(object sender, EventArgs e)
+    {
+        Password.IsPassword = !Password.IsPassword;
     }
 }

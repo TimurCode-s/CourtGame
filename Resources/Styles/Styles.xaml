@@ -9,13 +9,20 @@
         <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
     </Style>
 
-    <Style TargetType="VerticalStackLayout" x:Key="EldanVert">
-        <Setter Property="HorizontalOptions" Value="Center"></Setter>
-        <Setter Property="VerticalOptions" Value="Center"></Setter>
-        <Setter Property="WidthRequest" Value="350"></Setter>
-        <Setter Property="Spacing" Value="4"> </Setter>
+    <Style x:Key="InputBorder" TargetType="Border">
+        <Setter Property="Stroke" Value="#805F4B" />
+        <Setter Property="StrokeThickness" Value="1.5" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 26" />
+        <Setter Property="BackgroundColor" Value="#183B241B" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="HeightRequest" Value="66" />
     </Style>
-    
+
+    <Style x:Key="MakeDarker" TargetType="Button">
+        <Setter Property="VisualStateManager.VisualStateGroups" Value=""></Setter>
+        
+        
+    </Style>
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
     </Style>

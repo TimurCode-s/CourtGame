@@ -3,12 +3,185 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourtGame.Views.RegisterPage"
              Title="RegisterPage">
-    <VerticalStackLayout Style="{x:StaticResource EldanVert}" >
-        <Label Style="{x:StaticResource ButtSize}" Text="UserNameee"></Label>
-        <Entry x:Name="Name" Placeholder="Enter your username" />
-        <Label x:Name="isVallidName" Text=""></Label>
-        <Label Text="Passworde" ></Label>
-        <Entry x:Name="Password" Placeholder="Enter your password" />
-        <Button Text="Register" Clicked="OnRegisterClicked" />
-    </VerticalStackLayout>
+    <Grid>
+        <!-- Courtroom background -->
+        <Image
+            Source="back_ground.png"
+            Aspect="AspectFill" />
+
+        <!-- Dark overlay -->
+        <BoxView Color="#70301B12" />
+
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <Grid Padding="16,24"
+                  HorizontalOptions="Fill">
+
+                <Border
+                    BackgroundColor="#E82F1D16"
+                    Stroke="#8C6049"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 28"
+                    Padding="24"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="520"
+                    MaximumWidthRequest="600">
+
+                    <VerticalStackLayout Spacing="14">
+
+                        <!-- Header -->
+                        <Label
+                            Text="⚖"
+                            FontSize="42"
+                            HorizontalTextAlignment="Center"
+                            TextColor="#FFB64F" />
+
+                        <Label
+                            Text="Create Your Account"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            TextColor="#FFF3E7" />
+
+                        <Label
+                            Text="Join us and start your journey"
+                            FontSize="14"
+                            HorizontalTextAlignment="Center"
+                            TextColor="#C8B5A5"
+                            Margin="0,0,0,8" />
+
+                        <!-- Name -->
+                        <VerticalStackLayout Spacing="4">
+                            <Border
+                                Stroke="#8C6049"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 28"
+                                Padding="16,5">
+
+                                <Entry
+                                    x:Name="Name"
+                                    Placeholder="♙   Name"
+                                    TextColor="#FFF3E7"
+                                    PlaceholderColor="#C8B5A5"
+                                    BackgroundColor="Transparent"
+                                    ClearButtonVisibility="WhileEditing" />
+                            </Border>
+
+                            <Label
+                                x:Name="NameErr"
+                                Text="Name is required."
+                                TextColor="#FFFF7777"
+                                FontSize="12"
+                                Margin="12,0,0,0"
+                                IsVisible="False" />
+                        </VerticalStackLayout>
+
+                        <!-- Email -->
+                        <VerticalStackLayout Spacing="4">
+                            <Border
+                                Stroke="#8C6049"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 28"
+                                Padding="16,5">
+
+                                <Entry
+                                    x:Name="EmailEntry"
+                                    Placeholder="✉   Email"
+                                    Keyboard="Email"
+                                    TextColor="#FFF3E7"
+                                    PlaceholderColor="#C8B5A5"
+                                    BackgroundColor="Transparent"
+                                    ClearButtonVisibility="WhileEditing" />
+                            </Border>
+
+                            <Label
+                                x:Name="EmailErr"
+                                Text="Please enter a valid email address."
+                                TextColor="#FFFF7777"
+                                FontSize="12"
+                                Margin="12,0,0,0"
+                                IsVisible="False" />
+                        </VerticalStackLayout>
+
+                        <!-- Password -->
+                        <VerticalStackLayout Spacing="4">
+                            <Border
+                                Stroke="#8C6049"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 28"
+                                Padding="16,5">
+
+                                <Entry
+                                    x:Name="Password"
+                                    Placeholder="♙   Password"
+                                    IsPassword="True"
+                                    TextColor="#FFF3E7"
+                                    PlaceholderColor="#C8B5A5"
+                                    BackgroundColor="Transparent" />
+                            </Border>
+
+                            <Label
+                                x:Name="PassErr"
+                                Text="Password must contain at least 8 characters."
+                                TextColor="#FFFF7777"
+                                FontSize="12"
+                                Margin="12,0,0,0"
+                                IsVisible="False" />
+                        </VerticalStackLayout>
+
+                        <!-- Date of birth -->
+                        <Label
+                            Text="Date of birth"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="#FFF3E7"
+                            Margin="2,2,0,0" />
+
+                        <VerticalStackLayout Spacing="4">
+                            <Border
+                                Stroke="#8C6049"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 28"
+                                Padding="12,5">
+
+                                <DatePicker
+                                    x:Name="BirthdayPicker"
+                                    Format="dd MMM yyyy"
+                                    TextColor="#FFF3E7"
+                                    BackgroundColor="Transparent"
+                                    MaximumDate="{Binding Source={x:Reference ThisPage}, Path=Today}" />
+                            </Border>
+                        </VerticalStackLayout>
+                        <Label Text="Already have an account?" TextColor="White" HorizontalOptions="Center"></Label>
+                        <Button Clicked="OnLoginClicked" Text="Log in" BackgroundColor="Transparent"></Button>
+
+
+
+
+                        <!-- Register -->
+                        <Button
+                            x:Name="RegisterButton"
+                            Text="Register"
+                            Clicked="OnRegisterClicked"
+                            BackgroundColor="#FFB64F"
+                            TextColor="#402518"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            CornerRadius="28"
+                            HeightRequest="52"
+                            Margin="0,4,0,0" />
+
+                       
+
+                        <BoxView
+                            HeightRequest="1"
+                            Color="#8C6049"
+                            Margin="0,2,0,0" />
+
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </ScrollView>
+    </Grid>
+
 </ContentPage>
