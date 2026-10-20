@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:CourtGame.Helper"
              x:Class="CourtGame.Views.RegisterPage"
              Title="RegisterPage">
     <Grid>
@@ -118,8 +119,14 @@
                                     IsPassword="True"
                                     TextColor="#FFF3E7"
                                     PlaceholderColor="#C8B5A5"
-                                    BackgroundColor="Transparent" />
+                                    BackgroundColor="Transparent" 
+                                    />
+
+
                             </Border>
+                            <Button Clicked="OnTogglePasswordClicked" Text="{x:Static helpers:IconFonts.Visible}"></Button>
+
+
 
                             <Label
                                 x:Name="PassErr"
@@ -154,25 +161,15 @@
                             </Border>
                         </VerticalStackLayout>
                         <Label Text="Already have an account?" TextColor="White" HorizontalOptions="Center"></Label>
-                        <Button Clicked="OnLoginClicked" Text="Log in" BackgroundColor="Transparent"></Button>
-
-
-
+                        <Button Clicked="OnLoginClicked" Text="Log in" BackgroundColor="Transparent" Style="{x:StaticResource Tranbutt}"></Button>
 
                         <!-- Register -->
                         <Button
                             x:Name="RegisterButton"
                             Text="Register"
                             Clicked="OnRegisterClicked"
-                            BackgroundColor="#FFB64F"
-                            TextColor="#402518"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CornerRadius="28"
-                            HeightRequest="52"
-                            Margin="0,4,0,0" />
-
-                       
+                            Style="{x:StaticResource MK}"
+                            />
 
                         <BoxView
                             HeightRequest="1"

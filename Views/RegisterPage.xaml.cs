@@ -26,13 +26,25 @@ public partial class RegisterPage : ContentPage
             isValid = false;
 
         }
+        if (EmailErr.Text == "" || EmailErr.Text == null)
+        {
+            EmailErr.IsVisible = true;  
+            isValid = false;
+            
+        }
+        if (!EmailErr.Text.Contains("@gmail.com"))
+        {
+            EmailErr.IsVisible = true;
+            isValid = false;
+
+        }
         if (isValid)
 		{
-            if (data.AddUser(Name.Text, Password.Text))
+            if (data.AddUser(Name.Text, Password.Text, EmailErr.Text))
             {
-                DataRepository.users.Add(new User { Name = Name.Text, Password = Password.Text });
+                DataRepository.users.Add(new User { Name = Name.Text, Password = Password.Text, Email = EmailErr.Text });
                 DisplayAlert("Success", "User registered successfully!", "OK");
-
+                Navigation.PushAsync(new HomePage());
 
             }
             else

@@ -130,10 +130,10 @@
                             IsVisible="False" />
                         </VerticalStackLayout>
                         <Label Text="You not have an account?" TextColor="White" HorizontalOptions="Center"></Label>
-                        <Button Clicked="OnRegisterClicked" Text="Regist" BackgroundColor="Transparent"></Button>
+                        <Button Clicked="OnRegisterClicked" Text="Regist" BackgroundColor="Transparent" Style="{x:StaticResource Tranbutt}"></Button>
 
                         <!-- Log in -->
-                        <Button
+                        <Button      
                         Text="Log in"
                         Clicked="OnLoginClicked"
                         BackgroundColor="#FFB64F"
@@ -142,7 +142,9 @@
                         FontAttributes="Bold"
                         CornerRadius="28"
                         HeightRequest="52"
-                        Margin="0,4,0,0" />
+                        Margin="0,4,0,0" 
+                        Style="{x:StaticResource MK}"
+                        />
 
                         <BoxView
                         HeightRequest="1"

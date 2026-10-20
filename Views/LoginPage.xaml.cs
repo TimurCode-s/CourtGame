@@ -23,12 +23,24 @@ public partial class LoginPage : ContentPage
             isValid = false;
 
         }
+        if (EmailErr.Text == "" || EmailErr.Text == null)
+        {
+            EmailErr.IsVisible = true;
+            isValid = false;
+
+        }
+        if (!EmailErr.Text.Contains("@gmail.com"))
+        {
+            EmailErr.IsVisible = true;
+            isValid = false;
+
+        }
         if (isValid)
         {
             bool found = false;
             foreach (var user in Services.DataRepository.users)
             {
-                if (user.Name == Name.Text && user.Password == Password.Text)
+                if (user.Name == Name.Text && user.Password == Password.Text && user.Email == EmailErr.Text)
                 {
                     Navigation.PushAsync(new HomePage());
                     found = true;

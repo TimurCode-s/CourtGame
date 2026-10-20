@@ -19,11 +19,86 @@
         <Setter Property="HeightRequest" Value="66" />
     </Style>
 
-    <Style x:Key="MakeDarker" TargetType="Button">
-        <Setter Property="VisualStateManager.VisualStateGroups" Value=""></Setter>
+    <Style x:Key="MK"
+           TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#FFB64F"></Setter>
+        <Setter Property="TextColor" Value="#402518"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+        <Setter Property="CornerRadius" Value="28"></Setter>
+        <Setter Property="HeightRequest" Value="52"></Setter>
+        <Setter Property="Margin" Value="0,4,0,0"></Setter>
+
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup Name="CommonStates">
+
+                    <VisualState Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="#FFB64F" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState Name="PointerOver">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="#E6952F" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="#C77A20" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                            Value="#806D59" />
+                            <Setter Property="TextColor"
+                            Value="#D0C4B8" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="Tranbutt">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup Name="CommonStates">
+                    
+                    <VisualState Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#E82F1D16"></Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    
+                    <VisualState Name="PointerOver">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#66FFFFFF"></Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+
+                
+
+
+                </VisualStateGroup>
+                
+            </VisualStateGroupList>
+            
+        </Setter>
         
         
     </Style>
+
+    
+
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
     </Style>
