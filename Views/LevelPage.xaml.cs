@@ -1,5 +1,3 @@
-using CourtGame.Resources.Levels;
-
 namespace CourtGame.Views;
 
 public partial class LevelPage : ContentPage
@@ -16,6 +14,7 @@ public partial class LevelPage : ContentPage
 
     private async void Level1_Button(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("Level1");
+        
+        await Shell.Current.GoToAsync("LevelPageMaster");
     }
 }

@@ -8,7 +8,7 @@ namespace CourtGame.Models
 {
     class Cases
     {
-        public List<string> Names { get; set; }
+        public static List<ResForCase> cases { get; set; }
 
 
     }
