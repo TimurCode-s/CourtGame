@@ -26,21 +26,15 @@ public partial class RegisterPage : ContentPage
             isValid = false;
 
         }
-        if (EmailErr.Text == "" || EmailErr.Text == null)
+        if (Email.Text == "" || Email.Text == null || !Email.Text.Contains("@"))
         {
             EmailErr.IsVisible = true;  
             isValid = false;
             
         }
-        if (!EmailErr.Text.Contains("@gmail.com"))
-        {
-            EmailErr.IsVisible = true;
-            isValid = false;
-
-        }
         if (isValid)
 		{
-            if (data.AddUser(Name.Text, Password.Text, EmailErr.Text))
+            if (data.AddUser(Name.Text, Password.Text, Email.Text))
             {
                 DataRepository.users.Add(new User { Name = Name.Text, Password = Password.Text, Email = EmailErr.Text });
                 DisplayAlert("Success", "User registered successfully!", "OK");
@@ -51,7 +45,9 @@ public partial class RegisterPage : ContentPage
             {
                 DisplayAlert("Failed", "User with user name like yours already exist", "OK");
             }
-        } 	
+        }
+        isValid = true;
+        
     }
     public async void OnLoginClicked(object sender, EventArgs e)
     {

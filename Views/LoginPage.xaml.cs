@@ -9,9 +9,10 @@ public partial class LoginPage : ContentPage
 	{
 		InitializeComponent();
 	}
-	public void OnLoginClicked(object sender, EventArgs e)
+	public async void OnLoginClicked(object sender, EventArgs e)
 	{
         bool isValid = true;
+        DataRepository data = new DataRepository();
         if (Password.Text == "" || Password.Text == null)
         {
             PassErr.IsVisible = true;
@@ -23,36 +24,29 @@ public partial class LoginPage : ContentPage
             isValid = false;
 
         }
-        if (EmailErr.Text == "" || EmailErr.Text == null)
+        if (Email.Text == "" || Email.Text == null || !Email.Text.Contains("@"))
         {
             EmailErr.IsVisible = true;
             isValid = false;
 
         }
-        if (!EmailErr.Text.Contains("@gmail.com"))
-        {
-            EmailErr.IsVisible = true;
-            isValid = false;
-
-        }
+        
         if (isValid)
         {
-            bool found = false;
-            foreach (var user in Services.DataRepository.users)
+            if (data.LoginUser(Name.Text, Password.Text, Email.Text))
             {
-                if (user.Name == Name.Text && user.Password == Password.Text && user.Email == EmailErr.Text)
-                {
-                    Navigation.PushAsync(new HomePage());
-                    found = true;
-                    
-                }
+                await DisplayAlert("Login Successful", "Welcome back!", "OK");
+                await Navigation.PushAsync(new HomePage());
             }
-            if (!found)
+            else
             {
-                DisplayAlert("Failed", "User was not found", "OK");
+                await DisplayAlert("Login Failed", "Try again", "OK");
+
             }
         }
-       
+
+        isValid = true;
+
     }	
     public async void OnRegisterClicked(object sender, EventArgs e)
     {

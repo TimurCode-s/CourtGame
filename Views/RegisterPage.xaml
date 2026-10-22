@@ -87,7 +87,7 @@
                                 Padding="16,5">
 
                                 <Entry
-                                    x:Name="EmailEntry"
+                                    x:Name="Email"
                                     Placeholder="✉   Email"
                                     Keyboard="Email"
                                     TextColor="#FFF3E7"

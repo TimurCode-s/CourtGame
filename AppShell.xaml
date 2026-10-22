@@ -23,6 +23,10 @@
     <ShellContent
         Title="Register"
         ContentTemplate="{DataTemplate local:RegisterPage}" />
+    
+    <ShellContent
+        Title="About Game"
+        ContentTemplate="{DataTemplate local:AboutGamePage}" />
 
     
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourtGame.Views.AboutGamePage"
+             Title="AboutGamePage">
+    <VerticalStackLayout>
+        <CollectionView ItemsSource="{Binding Pictures}">
+            <CollectionView.EmptyView>
+                <Label Text="No pictures available." 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="Gray"/>
+
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate >
+                <DataTemplate>
+                    
+
+                </DataTemplate>
+                
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

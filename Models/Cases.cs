@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace CourtGame.Models
 {
-    class Cases
+    public class Cases
     {
-        public static List<ResForCase> cases { get; set; }
-
+        //case properties
+        public List<string> images { get; set; }
+        public string description { get; set; }
+        public List<string> names { get; set; }
+        
 
     }
 }
