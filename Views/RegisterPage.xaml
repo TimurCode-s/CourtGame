@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:helpers="clr-namespace:CourtGame.Helper"
+             xmlns:Helper="clr-namespace:CourtGame.Helper"
              x:Class="CourtGame.Views.RegisterPage"
              Title="RegisterPage">
     <Grid>
@@ -61,7 +61,7 @@
                                 Padding="16,5">
 
                                 <Entry
-                                    x:Name="Name"
+                                    Text="{Binding Name}"
                                     Placeholder="♙   Name"
                                     TextColor="#FFF3E7"
                                     PlaceholderColor="#C8B5A5"
@@ -70,8 +70,7 @@
                             </Border>
 
                             <Label
-                                x:Name="NameErr"
-                                Text="Name is required."
+                                Text="{Binding ErrName}"
                                 TextColor="#FFFF7777"
                                 FontSize="12"
                                 Margin="12,0,0,0"
@@ -87,7 +86,7 @@
                                 Padding="16,5">
 
                                 <Entry
-                                    x:Name="Email"
+                                    Text="{Binding Email}"
                                     Placeholder="✉   Email"
                                     Keyboard="Email"
                                     TextColor="#FFF3E7"
@@ -97,8 +96,7 @@
                             </Border>
 
                             <Label
-                                x:Name="EmailErr"
-                                Text="Please enter a valid email address."
+                                Text="{Binding EmailErr}"
                                 TextColor="#FFFF7777"
                                 FontSize="12"
                                 Margin="12,0,0,0"
@@ -107,34 +105,38 @@
 
                         <!-- Password -->
                         <VerticalStackLayout Spacing="4">
-                            <Border
-                                Stroke="#8C6049"
-                                StrokeThickness="2"
-                                StrokeShape="RoundRectangle 28"
-                                Padding="16,5">
+                            <Grid ColumnDefinitions="*, auto" RowDefinitions="*, *">
+                                <Border
+                                     Stroke="#8C6049"
+                                     StrokeThickness="2"
+                                     StrokeShape="RoundRectangle 28"
+                                     Padding="16,5">
 
-                                <Entry
-                                    x:Name="Password"
-                                    Placeholder="♙   Password"
-                                    IsPassword="True"
-                                    TextColor="#FFF3E7"
-                                    PlaceholderColor="#C8B5A5"
-                                    BackgroundColor="Transparent" 
+                                    <Entry
+                                        Text="{Binding Password}"
+                                        Placeholder="♙   Password"
+                                        IsPassword="{Binding isPassword}"
+                                        TextColor="#FFF3E7"
+                                        PlaceholderColor="#C8B5A5"
+                                        BackgroundColor="Transparent" 
+                                        Grid.Column="0" 
+                                        />
+
+
+
+                                </Border>
+
+                                <Button Grid.Column="1" Command="{Binding TogglePasswordCommand}"  FontFamily="MaterialIcons" Text="{Binding Icon}" FontSize="25" BackgroundColor="Transparent" ></Button>
+                                <Label
+                                     Text="{Binding ErrPassword}"
+                                     TextColor="#FFFF7777"
+                                     FontSize="12"
+                                     Margin="12,0,0,0"
+                                     IsVisible="False"
+                                     Grid.Row="1"
                                     />
 
-
-                            </Border>
-                            <Button Clicked="OnTogglePasswordClicked" Text="{x:Static helpers:IconFonts.Visible}"></Button>
-
-
-
-                            <Label
-                                x:Name="PassErr"
-                                Text="Password must contain at least 8 characters."
-                                TextColor="#FFFF7777"
-                                FontSize="12"
-                                Margin="12,0,0,0"
-                                IsVisible="False" />
+                            </Grid>
                         </VerticalStackLayout>
 
                         <!-- Date of birth -->
@@ -161,13 +163,12 @@
                             </Border>
                         </VerticalStackLayout>
                         <Label Text="Already have an account?" TextColor="White" HorizontalOptions="Center"></Label>
-                        <Button Clicked="OnLoginClicked" Text="Log in" BackgroundColor="Transparent" Style="{x:StaticResource Tranbutt}"></Button>
+                        <Button Command="{Binding LoginCommand}" Text="Log in" BackgroundColor="Transparent" Style="{x:StaticResource Tranbutt}"></Button>
 
                         <!-- Register -->
                         <Button
-                            x:Name="RegisterButton"
                             Text="Register"
-                            Clicked="OnRegisterClicked"
+                            Command="{Binding RegisterCommand}"
                             Style="{x:StaticResource MK}"
                             />
 

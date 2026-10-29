@@ -8,9 +8,10 @@ public partial class AboutGamePage : ContentPage
 	public AboutGamePage()
 	{
 		InitializeComponent();
-		Pictures = new List<GamePictures>();
-
 		BindingContext = this;
+
+        Pictures = new List<GamePictures>();
+
 
         Pictures.Add(new GamePictures { image = "gamepic.png" });
         Pictures.Add(new GamePictures { image = "gamepic1.png" });

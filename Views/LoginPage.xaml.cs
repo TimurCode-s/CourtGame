@@ -1,3 +1,4 @@
+using CourtGame.Helper;
 using CourtGame.Models;
 using CourtGame.Services;
 
@@ -55,5 +56,14 @@ public partial class LoginPage : ContentPage
     public void OnTogglePasswordClicked(object sender, EventArgs e)
     {
         Password.IsPassword = !Password.IsPassword;
+        Button butt = (Button)sender;
+        if (Password.IsPassword)
+        {
+            butt.Text = IconFonts.Visibility;
+        }
+        else
+        {
+            butt.Text = IconFonts.Visibility_off;
+        }
     }
 }
