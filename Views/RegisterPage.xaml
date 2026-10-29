@@ -70,11 +70,12 @@
                             </Border>
 
                             <Label
-                                Text="{Binding ErrName}"
+                                Text="Name is required"
                                 TextColor="#FFFF7777"
                                 FontSize="12"
                                 Margin="12,0,0,0"
-                                IsVisible="False" />
+                                IsVisible="{Binding errNameVis}"
+                                />
                         </VerticalStackLayout>
 
                         <!-- Email -->
@@ -96,11 +97,11 @@
                             </Border>
 
                             <Label
-                                Text="{Binding EmailErr}"
+                                Text="Please enter a valid email address."
                                 TextColor="#FFFF7777"
                                 FontSize="12"
                                 Margin="12,0,0,0"
-                                IsVisible="False" />
+                                IsVisible="{Binding errEmVis}" />
                         </VerticalStackLayout>
 
                         <!-- Password -->
@@ -128,11 +129,11 @@
 
                                 <Button Grid.Column="1" Command="{Binding TogglePasswordCommand}"  FontFamily="MaterialIcons" Text="{Binding Icon}" FontSize="25" BackgroundColor="Transparent" ></Button>
                                 <Label
-                                     Text="{Binding ErrPassword}"
+                                     Text="Password must contain at least 6 characters."
                                      TextColor="#FFFF7777"
                                      FontSize="12"
                                      Margin="12,0,0,0"
-                                     IsVisible="False"
+                                     IsVisible="{Binding errPassVis}"
                                      Grid.Row="1"
                                     />
 

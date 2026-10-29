@@ -46,45 +46,51 @@ namespace CourtGame.ViewModels
             }
         }
 
-        private string errName = "";
-        public string ErrName
+        private bool errNameVis;
+        public bool ErrName
         {
-            get { return errName; }
+            get => errNameVis;
             set
             {
-                errName = value;
+                if (errNameVis == value) return;
+
+                errNameVis = value;
                 OnPropertyChanged();
             }
         }
 
-        private string errEmail = "";
-        public string EmailErr
+        private bool errEmVis;
+        public bool EmailErr
         {
-            get { return errEmail; }
+            get => errEmVis;
             set
             {
-                errEmail = value;
+                if (errEmVis == value) return;
+
+                errEmVis = value;
                 OnPropertyChanged();
             }
         }
 
-        private string errPassword = "";
-        public string ErrPassword
+        private bool errPassVis = false;
+        public bool ErrPassword
         {
-            get { return errPassword; }
+            get => errPassVis;
             set
             {
-                errPassword = value;
+                if (errPassVis == value) return;
+
+                errPassVis = value;
                 OnPropertyChanged();
             }
         }
-        private bool isPasswordVisible = true;
+        private bool ispasswordvisible = true;
         public bool IsPasswordVisible
         {
-            get { return isPasswordVisible; }
+            get { return ispasswordvisible; }
             set
             {
-                isPasswordVisible = value;
+                ispasswordvisible = value;
 
                 OnPropertyChanged();
             }
@@ -125,21 +131,24 @@ namespace CourtGame.ViewModels
 
             if (Password == "" || Password == null)
             {
-                ErrPassword = "Password must contain at least 8 characters.";
+                ErrPassword = false;
                 isValid = false;
             }
+            else ErrPassword = false;
             if (Name == "" || Name == null)
             {
-                ErrName = "Name is required.";
+                ErrName = true;
                 isValid = false;
 
             }
+            else ErrName = false;
             if (Email == "" || Email == null || !Email.Contains("@"))
             {
-                EmailErr = "Please enter a valid email address.";
+                EmailErr = true;
                 isValid = false;
 
             }
+            else EmailErr = false;
             if (isValid)
             {
                 if (data.AddUser(Name, Password, Email))
@@ -153,8 +162,10 @@ namespace CourtGame.ViewModels
                     await Application.Current.MainPage.DisplayAlert("Failed", "User already exist", "OK");
                 }
             }
+            else await Application.Current.MainPage.DisplayAlert("Failed", "Something went wrong, please check your input", "OK");
+
             isValid = true;
-            
+
         }
         private async void OnLoginClicked()
         {
@@ -173,10 +184,7 @@ namespace CourtGame.ViewModels
                 Icon = IconFonts.Visibility_off;
             }
         }
-        private async void ShowErr()
-        {
-            ErrName = "Name is required";
-        }
+       
         #endregion
     }
 }
