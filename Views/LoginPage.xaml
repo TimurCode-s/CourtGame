@@ -37,10 +37,11 @@
                         TextColor="#FFB64F" />
 
                         <Label
-                        Text="Log into your Account"
+                        Text="Welcome back!"
                         FontSize="24"
                         FontAttributes="Bold"
                         HorizontalTextAlignment="Center"
+                        FontFamily="QuicksandRegular"
                         TextColor="#FFF3E7" />
 
                         <Label
@@ -59,22 +60,21 @@
                             Padding="16,5">
 
                                 <Entry
-                                x:Name="Name"
+                                Text="{Binding Name}"
                                 Placeholder="♙   Name"
                                 TextColor="#FFF3E7"
                                 PlaceholderColor="#C8B5A5"
                                 BackgroundColor="Transparent"
                                 ClearButtonVisibility="WhileEditing" />
-                                
                             </Border>
 
                             <Label
-                            x:Name="NameErr"
-                            Text="Name is required."
+                            Text="Name is required"
                             TextColor="#FFFF7777"
                             FontSize="12"
                             Margin="12,0,0,0"
-                            IsVisible="False" />
+                            IsVisible="{Binding ErrName}"
+                            />
                         </VerticalStackLayout>
 
                         <!-- Email -->
@@ -86,7 +86,7 @@
                             Padding="16,5">
 
                                 <Entry
-                                x:Name="Email"
+                                Text="{Binding Email}"
                                 Placeholder="✉   Email"
                                 Keyboard="Email"
                                 TextColor="#FFF3E7"
@@ -96,53 +96,56 @@
                             </Border>
 
                             <Label
-                            x:Name="EmailErr"
                             Text="Please enter a valid email address."
                             TextColor="#FFFF7777"
                             FontSize="12"
                             Margin="12,0,0,0"
-                            IsVisible="False" />
+                            IsVisible="{Binding ErrEmail}" />
                         </VerticalStackLayout>
 
                         <!-- Password -->
                         <VerticalStackLayout Spacing="4">
-                            <Border
-                            Stroke="#8C6049"
-                            StrokeThickness="2"
-                            StrokeShape="RoundRectangle 28"
-                            Padding="16,5">
+                            <Grid ColumnDefinitions="*, auto" RowDefinitions="*, *">
+                                <Border
+                                 Stroke="#8C6049"
+                                 StrokeThickness="2"
+                                 StrokeShape="RoundRectangle 28"
+                                 Padding="16,5">
 
-                                <Entry
-                                x:Name="Password"
-                                Placeholder="♙   Password"
-                                IsPassword="True"
-                                TextColor="#FFF3E7"
-                                PlaceholderColor="#C8B5A5"
-                                BackgroundColor="Transparent" />
-                            </Border>
+                                    <Entry
+                                    Text="{Binding Password}"
+                                    Placeholder="♙   Password"
+                                    IsPassword="{Binding isPassword}"
+                                    TextColor="#FFF3E7"
+                                    PlaceholderColor="#C8B5A5"
+                                    BackgroundColor="Transparent" 
+                                    Grid.Column="0" 
+                                    />
 
-                            <Label
-                            x:Name="PassErr"
-                            Text="Password must contain at least 8 characters."
-                            TextColor="#FFFF7777"
-                            FontSize="12"
-                            Margin="12,0,0,0"
-                            IsVisible="False" />
+
+
+                                </Border>
+
+                                <Button Grid.Column="1" Command="{Binding TogglePasswordCommand}"  FontFamily="MaterialIcons" Text="{Binding Icon}" FontSize="25" BackgroundColor="Transparent" ></Button>
+                                 <Label
+                                     Text="Password must contain at least 6 characters."
+                                     TextColor="#FFFF7777"
+                                     FontSize="12"
+                                     Margin="12,0,0,0"
+                                     IsVisible="{Binding ErrPassword}"
+                                     Grid.Row="1"
+                                />
+
+                            </Grid>
                         </VerticalStackLayout>
-                        <Label Text="You not have an account?" TextColor="White" HorizontalOptions="Center"></Label>
-                        <Button Clicked="OnRegisterClicked" Text="Regist" BackgroundColor="Transparent" Style="{x:StaticResource Tranbutt}"></Button>
-
-                        <!-- Log in -->
-                        <Button      
-                        Text="Log in"
-                        Clicked="OnLoginClicked"
-                        BackgroundColor="#FFB64F"
-                        TextColor="#402518"
-                        FontSize="18"
-                        FontAttributes="Bold"
-                        CornerRadius="28"
-                        HeightRequest="52"
-                        Margin="0,4,0,0" 
+                        
+                        <Label Text="Dont have an account?" TextColor="White" HorizontalOptions="Center"></Label>
+                        <Button Command="{Binding RegisterCommand}" Text="Register" BackgroundColor="Transparent" Style="{x:StaticResource Tranbutt}"></Button>
+                        
+                        <!-- Register -->
+                        <Button
+                        Text="Log In"
+                        Command="{Binding LoginCommand}"
                         Style="{x:StaticResource MK}"
                         />
 

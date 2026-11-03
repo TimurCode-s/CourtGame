@@ -3,13 +3,106 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourtGame.Views.HomePage"
              Title="HomePage">
-    <Grid RowDefinitions="*, *, *" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="500" HeightRequest="300" RowSpacing="25">
-        
-        <Button Clicked="Start_Button" Text="Start" Grid.Row="0" BackgroundColor="Aqua"></Button>
+    <Grid>
 
-        <Button Clicked="Option_Button" Text="Option" Grid.Row="1" BackgroundColor="Aqua"></Button>
+        <!-- Background -->
+        <Image Source="back_ground.png"
+               Aspect="AspectFill"/>
 
-        <Button Clicked="Exit_Button" Text="Exit" Grid.Row="2" BackgroundColor="Aqua"></Button>
-       
+        <!-- Dark overlay -->
+        <BoxView Color="#A020120D"/>
+
+        <Grid RowDefinitions="Auto,*,Auto"
+              Padding="30">
+
+            <!-- Game title -->
+            <VerticalStackLayout
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                Spacing="8"
+                Margin="0,35,0,0">
+
+                <Label Text="⚖ COURTGAME"
+                       FontSize="38"
+                       FontAttributes="Bold"
+                       TextColor="#FFCA78"
+                       HorizontalTextAlignment="Center"/>
+
+                <Label Text="THE COURT IS NOW IN SESSION"
+                       FontSize="13"
+                       TextColor="#E5C6A1"
+                       HorizontalTextAlignment="Center"/>
+
+            </VerticalStackLayout>
+
+            <!-- Menu -->
+            <VerticalStackLayout
+                Grid.Row="1"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="300"
+                Spacing="20">
+
+                <Label Text="Welcome, Your Honor!"
+                       FontSize="25"
+                       FontAttributes="Bold"
+                       TextColor="#FFF0D5"
+                       HorizontalTextAlignment="Center"/>
+
+                <Label Text="Are you ready to deliver justice?"
+                       FontSize="14"
+                       TextColor="#DCC4A8"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,15"/>
+
+                <!-- PLAY -->
+                <Button Text="▶   PLAY"
+                        Command="{Binding StartCommand}"
+                        BackgroundColor="#A66A36"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        CornerRadius="18"
+                        HeightRequest="65"
+                        Style="{StaticResource MK}"
+                        />
+
+                <!-- OPTIONS -->
+                <Button Text="⚙   OPTIONS"
+                        Command="{Binding OptionCommand}"
+                        BackgroundColor="#79513B"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        CornerRadius="18"
+                        HeightRequest="65"
+                        Style="{StaticResource OptionButt}"
+                        />
+
+                <!-- EXIT -->
+                <Button Text="✕   EXIT"
+                        Command="{Binding ExitCommand}"
+                        BackgroundColor="#60382D"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        CornerRadius="18"
+                        HeightRequest="65"
+                        Style="{StaticResource ExitButt}"
+                        />
+
+            </VerticalStackLayout>
+
+            <!-- Footer -->
+            <Label Grid.Row="2"
+                   Text="COURTGAME  •  v1.0"
+                   TextColor="#C8AA88"
+                   FontSize="12"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="End"
+                   Margin="0,0,0,10"/>
+
+        </Grid>
+
     </Grid>
 </ContentPage>

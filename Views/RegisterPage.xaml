@@ -74,7 +74,7 @@
                                 TextColor="#FFFF7777"
                                 FontSize="12"
                                 Margin="12,0,0,0"
-                                IsVisible="{Binding errNameVis}"
+                                IsVisible="{Binding ErrName}"
                                 />
                         </VerticalStackLayout>
 
@@ -101,7 +101,7 @@
                                 TextColor="#FFFF7777"
                                 FontSize="12"
                                 Margin="12,0,0,0"
-                                IsVisible="{Binding errEmVis}" />
+                                IsVisible="{Binding ErrEmail}" />
                         </VerticalStackLayout>
 
                         <!-- Password -->
@@ -133,7 +133,7 @@
                                      TextColor="#FFFF7777"
                                      FontSize="12"
                                      Margin="12,0,0,0"
-                                     IsVisible="{Binding errPassVis}"
+                                     IsVisible="{Binding ErrPassword}"
                                      Grid.Row="1"
                                     />
 

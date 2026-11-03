@@ -24,6 +24,9 @@ namespace CourtGame.ViewModels
             }
         }
 
+        
+
+
         private string password = "";
         public string Password
         {
@@ -60,7 +63,7 @@ namespace CourtGame.ViewModels
         }
 
         private bool errEmVis;
-        public bool EmailErr
+        public bool ErrEmail
         {
             get => errEmVis;
             set
@@ -129,26 +132,27 @@ namespace CourtGame.ViewModels
             bool isValid = true;
             DataRepository data = new DataRepository();
 
-            if (Password == "" || Password == null)
+            if (string.IsNullOrWhiteSpace(Password))
             {
-                ErrPassword = false;
+                ErrPassword = true;
                 isValid = false;
             }
-            else ErrPassword = false;
-            if (Name == "" || Name == null)
+            else
+            {
+                ErrPassword = false;
+            }
+            if (string.IsNullOrWhiteSpace(Name))
             {
                 ErrName = true;
                 isValid = false;
-
             }
             else ErrName = false;
-            if (Email == "" || Email == null || !Email.Contains("@"))
+            if (string.IsNullOrWhiteSpace(Email) || !Email.Contains("@"))
             {
-                EmailErr = true;
+                ErrEmail = true;
                 isValid = false;
-
             }
-            else EmailErr = false;
+            else ErrEmail = false;
             if (isValid)
             {
                 if (data.AddUser(Name, Password, Email))
