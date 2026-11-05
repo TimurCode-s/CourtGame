@@ -9,6 +9,6 @@ public partial class RegisterPage : ContentPage
     public RegisterPage()
 	{
         InitializeComponent();
-        BindingContext = new CourtGame.ViewModels.RegisterView();
+        BindingContext = new RegisterView();
     }
 }

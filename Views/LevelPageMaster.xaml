@@ -6,7 +6,26 @@
     <Grid>
         <Image Source="court_room.png" Aspect="AspectFill" ></Image>
 
+        
         <AbsoluteLayout>
+            <CollectionView ItemsSource="{Binding Case.Images}">
+                <CollectionView.EmptyView>
+                    <Label Text="No cases available, maybe something happened with binding. Call to Eldan :)" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Source="{Binding images}" 
+                                    />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+
+
+            </CollectionView>
 
             <Image Source="lawyer.png"
            Aspect="AspectFit"

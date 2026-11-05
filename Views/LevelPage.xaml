@@ -6,12 +6,12 @@
     <Grid RowDefinitions="*,*,*">
 
         <HorizontalStackLayout Grid.Row="0">
-            <Button Clicked="Level1_Button" Text="1"></Button>
+            <Button Command="{Binding Level1Command}" Text="1"></Button>
         </HorizontalStackLayout>
         
         <VerticalStackLayout Grid.Row="1">
             
-            <Button Clicked="GoBack_Button" Text="Back" ></Button>
+            <Button Command="{Binding GoBackCommand}" Text="Back" ></Button>
             
 
             
