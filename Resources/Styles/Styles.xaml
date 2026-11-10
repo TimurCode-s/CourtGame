@@ -10,19 +10,19 @@
         <Setter Property="FontFamily" Value="QuicksandRegular"></Setter>
     </Style>
 
+
     <Style x:Key="InputBorder" TargetType="Border">
-        <Setter Property="Stroke" Value="#805F4B" />
-        <Setter Property="StrokeThickness" Value="1.5" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 26" />
-        <Setter Property="BackgroundColor" Value="#183B241B" />
-        <Setter Property="Padding" Value="16,8" />
-        <Setter Property="HeightRequest" Value="66" />
+        <Setter Property="Stroke" Value="#8C6049" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 28" />
+        <Setter Property="Padding" Value="16,5" />
     </Style>
 
     <Style x:Key="GamePic" TargetType="Image">
         <Setter Property="HeightRequest" Value="350"></Setter>
-        
+
     </Style>
+    
     <Style x:Key="MK"
            TargetType="Button">
         <Setter Property="BackgroundColor" Value="#FFB64F"></Setter>

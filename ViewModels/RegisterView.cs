@@ -130,7 +130,6 @@ namespace CourtGame.ViewModels
         private async void OnRegisterClicked()
         {
             bool isValid = true;
-            DataRepository data = new DataRepository();
 
             if (string.IsNullOrWhiteSpace(Password))
             {
@@ -155,7 +154,7 @@ namespace CourtGame.ViewModels
             else ErrEmail = false;
             if (isValid)
             {
-                if (data.AddUser(Name, Password, Email))
+                if (DataRepository.AddUser(Name, Password, Email))
                 {
                     await Application.Current.MainPage.DisplayAlert("Success", "User registered successfully!", "OK");
                     await Application.Current.MainPage.Navigation.PushAsync(new Views.LoginPage());
@@ -181,11 +180,11 @@ namespace CourtGame.ViewModels
             IsPasswordVisible = !IsPasswordVisible;
             if (IsPasswordVisible)
             {
-                Icon = IconFonts.Visibility;
+                IconVisibility = IconFonts.Visibility;
             }
             else
             {
-                Icon = IconFonts.Visibility_off;
+                IconVisibility = IconFonts.Visibility_off;
             }
         }
        

@@ -5,32 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using CourtGame.Models;
 using CourtGame.ViewModels;
+using CourtGame.Services;
+
 
 namespace CourtGame.ViewModels
 {
     public class LevelPageMasterViewModel : ViewModelBase
     {
         #region Fieds
-        private Cases _case;
-        public Cases Case
-        {
-            get => _case;
-            set
-            {
-                _case = value;
-                OnPropertyChanged();
-            }
-        }
-        private List<string> images;
+
+        private List<string> _images;
+
         public List<string> Images
         {
-            get => Images;
+            get { return _images; }
             set
             {
-                images = value;
+                _images = value;
                 OnPropertyChanged();
             }
         }
+
+
+
 
         private string description;
         public string Description
@@ -52,9 +49,13 @@ namespace CourtGame.ViewModels
 
 
         #region Constructor
-        public LevelPageMasterViewModel(Cases cases)
+        public LevelPageMasterViewModel(Case focusCase)
         {
-            Case = cases;
+            //Images = focusCase.Images;
+
+
+
+
         }
 
         #endregion

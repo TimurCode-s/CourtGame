@@ -8,6 +8,6 @@ public partial class LevelPageMaster : ContentPage
 	public LevelPageMaster()
 	{
 		InitializeComponent();
-		BindingContext = new LevelPageMasterViewModel(new Cases());	
+		BindingContext = new LevelPageMasterViewModel(new Case());	
     }
 }

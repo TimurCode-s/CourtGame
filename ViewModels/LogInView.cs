@@ -134,7 +134,6 @@ namespace CourtGame.ViewModels
         private async void OnLoginClicked()
         {
             bool isValid = true;
-            DataRepository data = new DataRepository();
             if (string.IsNullOrWhiteSpace(Password))
             {
                 ErrPassword = true;
@@ -165,7 +164,7 @@ namespace CourtGame.ViewModels
 
             if (isValid)
             {
-                if (data.LoginUser(Name, Password, Email))
+                if (DataRepository.LoginUser(Name, Password, Email))
                 {
                     await Application.Current.MainPage.DisplayAlert("Login Successful", "Welcome back!", "OK");
                     await Application.Current.MainPage.Navigation.PushAsync(new Views.HomePage());
@@ -188,11 +187,11 @@ namespace CourtGame.ViewModels
             IsPasswordVisible = !IsPasswordVisible;
             if (IsPasswordVisible)
             {
-                Icon = IconFonts.Visibility;
+                IconVisibility = IconFonts.Visibility;
             }
             else
             {
-                Icon = IconFonts.Visibility_off;
+                IconVisibility = IconFonts.Visibility_off;
             }
         }
 

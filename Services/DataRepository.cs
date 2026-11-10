@@ -10,31 +10,31 @@ namespace CourtGame.Services
 {
     internal class DataRepository
     {
-        public static List<User> users { get; set; } = new List<User>();
-        public static List<Cases> cases { get; set; } = new List<Cases>();
-
-        public DataRepository()
+        public static List<User> users { get; set; } = new List<User>()
         {
-            users.Add(new User { Name = "Timur", Password = "1234", Email = "fe@gmail.com"});
-            users.Add(new User { Name = "Ben", Password = "3423", Email = "Benchick@gmail.com"});
-            users.Add(new User { Name = "ELdan", Password = "Eldan", Email = "Eldan@gmail.com"});
-            users.Add(new User { Name = "Ilya", Password = "67ila", Email = "Sigma@gmail.com"});
+             new User { Name = "Timur", Password = "1234", Email = "fe@gmail.com"},
+           new User { Name = "Ben", Password = "3423", Email = "Benchick@gmail.com"},
+            new User { Name = "ELdan", Password = "Eldan", Email = "Eldan@gmail.com"},
+            new User { Name = "Ilya", Password = "67ila", Email = "Sigma@gmail.com"}
+        };
+        public static List<Case> cases { get; set; } = new List<Case>()
+        {
+            new Case {
+                Images = new List<string> { "defendant1.png", "lawyer1.png" },
+                Description = "Late one night, a valuable diamond necklace disappeared from the Riverside Museum. The security alarm was triggered at 11:45 PM, and security cameras showed a suspicious figure leaving the building shortly afterward.\r\n\r\nDaniel Carter, a former museum employee, was arrested after his fingerprints were discovered near the display case.\r\n\r\nHowever, Daniel strongly denies the accusations. He claims he was nowhere near the museum that night and believes someone is trying to frame him.\r\n\r\nThe prosecution argues that the fingerprints, security footage, and witness testimony prove his guilt.\r\n\r\nThe defense believes there is more to this story than meets the eye.",
+                Date = "October 14, 2026",
+                Names = new List<string> { "Daniel Carter", "Detective Sarah", "Museum Curator" },
+                Dialogs1 = new List<string> { "Hello, I'm Detective Sarah.", "Hi, I'm Daniel Carter." },
+                Dialogs2 = new List<string> { "We need to investigate the crime scene.", "I understand." },
+                Dialogs3 = new List<string> { "The evidence is clear.", "I still maintain my innocence." },
+                Location = "Riverside Museum",
+            }
 
-            cases.Add(new Cases { images = new List<string> { "defendant1.png", "lawyer1.png" },
-                description = "Late one night, a valuable diamond necklace disappeared from the Riverside Museum. The security alarm was triggered at 11:45 PM, and security cameras showed a suspicious figure leaving the building shortly afterward.\r\n\r\nDaniel Carter, a former museum employee, was arrested after his fingerprints were discovered near the display case.\r\n\r\nHowever, Daniel strongly denies the accusations. He claims he was nowhere near the museum that night and believes someone is trying to frame him.\r\n\r\nThe prosecution argues that the fingerprints, security footage, and witness testimony prove his guilt.\r\n\r\nThe defense believes there is more to this story than meets the eye.",
-                date = "October 14, 2026",
-                names = new List<string> { "Daniel Carter", "Detective Sarah", "Museum Curator" },
-                dialogs1 = new List<string> { "Hello, I'm Detective Sarah.", "Hi, I'm Daniel Carter." },
-                dialogs2 = new List<string> { "We need to investigate the crime scene.", "I understand." },
-                dialogs3 = new List<string> { "The evidence is clear.", "I still maintain my innocence." },
-                location = "Riverside Museum",
-            });
 
+        };
 
-        }
-
-        public bool AddUser(string Name, string Password, string Email)
-        {         
+        public static bool AddUser(string Name, string Password, string Email)
+        {
             string pattern = @"^[a-zA-Z0-9]+$";
 
             if (users.Any(u => u.Name == Name) || !Regex.IsMatch(Name, pattern) || users.Any(u => u.Email == Email))
@@ -42,14 +42,14 @@ namespace CourtGame.Services
                 return false;
             }
             users.Add(new User { Name = Name, Password = Password, Email = Email });
-            return true; 
+            return true;
         }
 
-        public bool LoginUser(string Name, string Password, string Email)
+        public static bool LoginUser(string Name, string Password, string Email)
         {
             return users.Any(u => u.Name == Name && u.Password == Password && u.Email == Email);
         }
 
-        
+
     }
 }

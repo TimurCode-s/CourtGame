@@ -8,7 +8,7 @@
 
         
         <AbsoluteLayout>
-            <CollectionView ItemsSource="{Binding Case.Images}">
+            <CollectionView ItemsSource="{Binding Images}">
                 <CollectionView.EmptyView>
                     <Label Text="No cases available, maybe something happened with binding. Call to Eldan :)" 
                            HorizontalOptions="Center" 
@@ -16,10 +16,7 @@
                 </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Image Source="{Binding images}" 
-                                    />
-                        </Grid>
+                        <Image Source="{Binding Images}" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
 

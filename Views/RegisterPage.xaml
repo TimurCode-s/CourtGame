@@ -106,17 +106,13 @@
 
                         <!-- Password -->
                         <VerticalStackLayout Spacing="4">
-                            <Grid ColumnDefinitions="*, auto" RowDefinitions="*, *">
-                                <Border
-                                     Stroke="#8C6049"
-                                     StrokeThickness="2"
-                                     StrokeShape="RoundRectangle 28"
-                                     Padding="16,5">
-
+                            <Border Style="{StaticResource InputBorder}">
+                                
+                                <Grid ColumnDefinitions="*, auto" RowDefinitions="*, *">
                                     <Entry
                                         Text="{Binding Password}"
                                         Placeholder="♙   Password"
-                                        IsPassword="{Binding isPassword}"
+                                        IsPassword="{Binding IsPasswordVisible}"
                                         TextColor="#FFF3E7"
                                         PlaceholderColor="#C8B5A5"
                                         BackgroundColor="Transparent" 
@@ -124,20 +120,17 @@
                                         />
 
 
-
-                                </Border>
-
-                                <Button Grid.Column="1" Command="{Binding TogglePasswordCommand}"  FontFamily="MaterialIcons" Text="{Binding Icon}" FontSize="25" BackgroundColor="Transparent" ></Button>
-                                <Label
-                                     Text="Password must contain at least 6 characters."
-                                     TextColor="#FFFF7777"
-                                     FontSize="12"
-                                     Margin="12,0,0,0"
-                                     IsVisible="{Binding ErrPassword}"
-                                     Grid.Row="1"
-                                    />
-
-                            </Grid>
+                                    <Button Grid.Column="1" Command="{Binding TogglePasswordCommand}"  FontFamily="MaterialIcons" Text="{Binding IconVisibility}" FontSize="25" BackgroundColor="Transparent" ></Button>
+                                </Grid>
+                            </Border>
+                            <Label
+                                 Text="Password must contain at least 6 characters."
+                                 TextColor="#FFFF7777"
+                                 FontSize="12"
+                                 Margin="12,0,0,0"
+                                 IsVisible="{Binding ErrPassword}"
+                                 Grid.Row="1"
+                                />
                         </VerticalStackLayout>
 
                         <!-- Date of birth -->
