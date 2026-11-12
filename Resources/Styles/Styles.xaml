@@ -9,7 +9,35 @@
         <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
         <Setter Property="FontFamily" Value="QuicksandRegular"></Setter>
     </Style>
+    
+    <Style TargetType="ImageButton" x:Key="MMD">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup Name="CommonStates">
+                    
+                    <VisualState Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                        </VisualState.Setters>
+                    </VisualState>
 
+                    <VisualState Name="PointerOver">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#10000000"></Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    
+                    
+                    
+                </VisualStateGroup>
+                
+                
+            </VisualStateGroupList>
+            
+        </Setter>
+        
+    </Style>
+    
 
     <Style x:Key="InputBorder" TargetType="Border">
         <Setter Property="Stroke" Value="#8C6049" />

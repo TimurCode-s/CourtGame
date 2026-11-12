@@ -34,11 +34,7 @@ namespace CourtGame.ViewModels
         }
         private async void Level1_Clicked()
         {
-            Case Case = DataRepository.cases[0];
-            LevelPageMasterViewModel.Images = Case.Images;
-                
-
-            await Application.Current.MainPage.Navigation.PushAsync(new LevelPageMaster());
+            await Application.Current.MainPage.Navigation.PushAsync(new LevelPageMaster(0));
         }
         #endregion
     }

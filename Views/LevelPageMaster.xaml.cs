@@ -5,9 +5,10 @@ namespace CourtGame.Views;
 
 public partial class LevelPageMaster : ContentPage
 {
-	public LevelPageMaster()
+	public LevelPageMaster(int num)
 	{
 		InitializeComponent();
-		BindingContext = new LevelPageMasterViewModel(new Case());	
+		BindingContext = new LevelPageMasterViewModel(num);	
+
     }
 }

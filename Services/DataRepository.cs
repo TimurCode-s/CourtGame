@@ -20,7 +20,7 @@ namespace CourtGame.Services
         public static List<Case> cases { get; set; } = new List<Case>()
         {
             new Case {
-                Images = new List<string> { "defendant1.png", "lawyer1.png" },
+                Images = new List<string> { "defendant1.png", "lawyer1.png", "prosecutor1.png" },
                 Description = "Late one night, a valuable diamond necklace disappeared from the Riverside Museum. The security alarm was triggered at 11:45 PM, and security cameras showed a suspicious figure leaving the building shortly afterward.\r\n\r\nDaniel Carter, a former museum employee, was arrested after his fingerprints were discovered near the display case.\r\n\r\nHowever, Daniel strongly denies the accusations. He claims he was nowhere near the museum that night and believes someone is trying to frame him.\r\n\r\nThe prosecution argues that the fingerprints, security footage, and witness testimony prove his guilt.\r\n\r\nThe defense believes there is more to this story than meets the eye.",
                 Date = "October 14, 2026",
                 Names = new List<string> { "Daniel Carter", "Detective Sarah", "Museum Curator" },

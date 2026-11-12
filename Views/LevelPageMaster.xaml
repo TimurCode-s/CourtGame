@@ -4,41 +4,53 @@
              x:Class="CourtGame.Views.LevelPageMaster"
              Title="LevelPageMaster">
     <Grid>
-        <Image Source="court_room.png" Aspect="AspectFill" ></Image>
+        <Image Source="courtroom.png" Aspect="AspectFill" ></Image>
 
-        
         <AbsoluteLayout>
-            <CollectionView ItemsSource="{Binding Images}">
-                <CollectionView.EmptyView>
-                    <Label Text="No cases available, maybe something happened with binding. Call to Eldan :)" 
-                           HorizontalOptions="Center" 
-                           VerticalOptions="Center" />
-                </CollectionView.EmptyView>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding Images}" />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
 
+            <ImageButton Source="{Binding Images[0]}"
+                Aspect="AspectFit"
+                AbsoluteLayout.LayoutBounds="0.15,0.46,0.12,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                BackgroundColor="Transparent" />
 
+            <ImageButton Source="{Binding Images[1]}"
+                Aspect="AspectFit"
+                AbsoluteLayout.LayoutBounds="0.33,0.46,0.12,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                BackgroundColor="Transparent"/>
 
-            </CollectionView>
-
-            <Image Source="lawyer.png"
-           Aspect="AspectFit"
-           AbsoluteLayout.LayoutBounds="0.15,0.46,0.12,0.2"
-           AbsoluteLayout.LayoutFlags="All" />
-
-            <Image Source="suspect.png"
-           Aspect="AspectFit"
-           AbsoluteLayout.LayoutBounds="0.33,0.46,0.12,0.2"
-           AbsoluteLayout.LayoutFlags="All" />
-
-            <Image Source="prosecutor.png"
-           Aspect="AspectFit"
-           AbsoluteLayout.LayoutBounds="0.68,0.46,0.12,0.2"
-           AbsoluteLayout.LayoutFlags="All" />
+            <ImageButton Source="{Binding Images[2]}"
+                Aspect="AspectFit"
+                AbsoluteLayout.LayoutBounds="0.68,0.46,0.12,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                BackgroundColor="Transparent"/>
+            
+            <ImageButton Source="micro.png"
+                Style="{StaticResource MMD}"
+                Aspect="AspectFit"
+                AbsoluteLayout.LayoutBounds="0.5,0.9,0.12,0.45"
+                AbsoluteLayout.LayoutFlags="All" 
+                BackgroundColor="Transparent"
+                Command="{Binding MicroCommand}" />
 
         </AbsoluteLayout>
+        <Grid VerticalOptions="End"
+            HorizontalOptions="Fill"
+            HeightRequest="350"
+            WidthRequest="1000"
+            Margin="25,0,25,20">
+
+            <ImageButton Source="dialogwindow.png" Aspect="Fill" BackgroundColor="Transparent" Command="{Binding DialogCommmand}"/>
+
+            <!-- Dialogue text -->
+            <Label Text="{Binding DialogText}"
+                 TextColor="#211711"
+                 FontSize="20"
+                 Margin="35,20,65,20"
+                 VerticalOptions="Center"
+                 HorizontalOptions="Start" />   
+
+        </Grid>
     </Grid>
 </ContentPage>
