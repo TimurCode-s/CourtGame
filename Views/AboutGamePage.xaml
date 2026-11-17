@@ -13,14 +13,12 @@
                        TextColor="Gray"/>
 
             </CollectionView.EmptyView>
-            <CollectionView.ItemTemplate >
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    
-
+                    <Image Source="{Binding .}" HeightRequest="500"></Image>
                 </DataTemplate>
-                
+
             </CollectionView.ItemTemplate>
-            
         </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

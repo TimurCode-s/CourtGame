@@ -39,8 +39,10 @@
             HorizontalOptions="Fill"
             HeightRequest="350"
             WidthRequest="1000"
-            Margin="25,0,25,20">
+            Margin="25,0,25,20"
+            IsVisible="{Binding Visible}">
 
+            
             <ImageButton Source="dialogwindow.png" Aspect="Fill" BackgroundColor="Transparent" Command="{Binding DialogCommmand}"/>
 
             <!-- Dialogue text -->
@@ -49,7 +51,8 @@
                  FontSize="20"
                  Margin="35,20,65,20"
                  VerticalOptions="Center"
-                 HorizontalOptions="Start" />   
+                 HorizontalOptions="Start" 
+                 />   
 
         </Grid>
     </Grid>

@@ -14,7 +14,7 @@ namespace CourtGame.ViewModels
     {
         #region Fieds
         int count = 0;
-
+        private bool typing;
 
         private List<string> image;
 
@@ -93,7 +93,7 @@ namespace CourtGame.ViewModels
         private string dialogText;
         public string DialogText
         { 
-            get => description;
+            get => dialogText;
             set
             {
                 dialogText = value;
@@ -101,8 +101,20 @@ namespace CourtGame.ViewModels
             }
 
         }
-        #endregion
+        private bool visible;
+        public bool Visible
+        { 
+            get => visible;
+            set
+            {
+                visible = value;
+                OnPropertyChanged();
+            }
+
+        }
         
+        #endregion
+
         #region Commands
         public Command MicroCommand { get; set; }
         public Command DialogCommmand { get; set; }
@@ -114,7 +126,7 @@ namespace CourtGame.ViewModels
         public LevelPageMasterViewModel(int num)
         {
             Images = DataRepository.cases[num].Images;
-            Dialogs1 = DataRepository.cases[num].Images;
+            Dialogs1 = DataRepository.cases[num].Dialogs1;
             MicroCommand = new Command(OnMicroClicked);
             DialogCommmand = new Command(OnDialogClicked);
         }
@@ -124,12 +136,33 @@ namespace CourtGame.ViewModels
         #region Methods
         public async void OnMicroClicked()
         {
-
+            Visible = true;
         }
         public async void OnDialogClicked()
         {
-            DialogText = Dialogs1[count];
-            count++;
+            if (count == Dialogs1.Count)
+            {
+                count = 0;
+                Visible = false;
+            }
+            else
+            {
+                typing = true;
+                for (int i = 0; i < Dialogs1.Count; i++)
+                {
+                    for (int j = 0; j < Dialogs1[i].Length; j++)
+                    {
+                        DialogText += Dialogs1[i][j];
+                        await Task.Delay(50);
+                    }
+                    DialogText = "";
+                }
+                typing = false;
+            }
+                
+            //DialogText = Dialogs1[count];
+
+            //count++;
         }
         #endregion
 

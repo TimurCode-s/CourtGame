@@ -9,7 +9,7 @@ using CourtGame.Services;
 
 namespace CourtGame.ViewModels
 {
-    public class LevelPageViewModel
+    public class LevelPageViewModel : ViewModelBase
     {
         #region Fields
         #endregion
